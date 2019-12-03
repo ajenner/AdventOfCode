@@ -26,7 +26,6 @@ public class Day2 {
         int noun = 0;
         int verb = 0;
         resetMemory();
-        int counter = 0;
         while (this.memory.get(0) != target) {
             if (noun < 99) {
                 noun++;
@@ -70,19 +69,11 @@ public class Day2 {
     }
 
     private void state1(int pos1, int pos2, int pos3) {
-        int pos1Val = memory.get(memory.get(pos1));
-        int pos2Val = memory.get(memory.get(pos2));
-        int pos3Val = memory.get(pos3);
-        int valToWrite = pos1Val + pos2Val;
-        memory.set(pos3Val, valToWrite);
+        memory.set(memory.get(pos3), memory.get(memory.get(pos2)) + memory.get(memory.get(pos1)));
     }
 
     private void state2(int pos1, int pos2, int pos3) {
-        int pos1Val = memory.get(memory.get(pos1));
-        int pos2Val = memory.get(memory.get(pos2));
-        int pos3Val = memory.get(pos3);
-        int valToWrite = pos1Val * pos2Val;
-        memory.set(pos3Val, valToWrite);
+        memory.set(memory.get(pos3), memory.get(memory.get(pos2)) * memory.get(memory.get(pos1)));
     }
 
     private void state99() {
