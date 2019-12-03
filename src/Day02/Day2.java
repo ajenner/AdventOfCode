@@ -1,7 +1,8 @@
+package Day02;
 import java.util.ArrayList;
 
 /**
- * Created by ajenner on 02/12/2019.
+ * Created by ajenner on Day02/12/2019.
  */
 public class Day2 {
 

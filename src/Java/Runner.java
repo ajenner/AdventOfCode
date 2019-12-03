@@ -1,7 +1,12 @@
+package Java;
+
+import Day01.Day1;
+import Day02.Day2;
+
 import java.util.ArrayList;
 
 /**
- * Created by ajenner on 02/12/2019.
+ * Created by ajenner on Day02/12/2019.
  */
 public class Runner {
     public static void main(String[] args) {

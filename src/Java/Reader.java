@@ -1,9 +1,11 @@
+package Java;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by ajenner on 02/12/2019.
+ * Created by ajenner on Day02/12/2019.
  */
 public class Reader {
     private final File file;
