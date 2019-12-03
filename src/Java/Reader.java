@@ -1,5 +1,7 @@
 package Java;
 
+import Day03.Wire;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -34,6 +36,19 @@ public class Reader {
             String[] input = scanner.nextLine().split(",");
             for (String s : input) {
                 inputList.add(Integer.parseInt(s));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return inputList;
+    }
+
+    public ArrayList<Wire> readEachWire() {
+        ArrayList<Wire> inputList = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(this.file);
+            while (scanner.hasNext()) {
+                inputList.add(new Wire(scanner.nextLine().split(",")));
             }
         } catch (Exception e) {
             e.printStackTrace();
