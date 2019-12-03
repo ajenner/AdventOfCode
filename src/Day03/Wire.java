@@ -27,37 +27,31 @@ public class Wire {
         int currX = 0;
         int currY = 0;
         int steps = 0;
+        int distance;
 
         for (int i = 0; i < directions.size(); i++) {
             Point p1 = new Point(currX, currY, 0);
             Point p2;
-            int distance;
+            distance = impulses.get(i);
+            steps += distance;
             switch (directions.get(i)){
                 case "U":
-                    distance = impulses.get(i);
                     currY += distance;
-                    steps += distance;
                     p2 = new Point(currX, currY, 0);
                     this.segments.add(new LineSegment(p1, p2, steps));
                     break;
                 case "R":
-                    distance = impulses.get(i);
                     currX += distance;
-                    steps += distance;
                     p2 = new Point(currX, currY, 0);
                     this.segments.add(new LineSegment(p1, p2, steps));
                     break;
                 case "D":
-                    distance = impulses.get(i);
                     currY -= distance;
-                    steps += distance;
                     p2 = new Point(currX, currY, 0);
                     this.segments.add(new LineSegment(p1, p2, steps));
                     break;
                 case "L":
-                    distance = impulses.get(i);
                     currX -= distance;
-                    steps += distance;
                     p2 = new Point(currX, currY, 0);
                     this.segments.add(new LineSegment(p1, p2, steps));
                     break;
