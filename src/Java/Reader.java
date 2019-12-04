@@ -29,11 +29,11 @@ public class Reader {
         return inputList;
     }
 
-    public ArrayList<Integer> readAsOpcodes() {
+    public ArrayList<Integer> readAsIntegers(String splitPattern) {
         ArrayList<Integer> inputList = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(this.file);
-            String[] input = scanner.nextLine().split(",");
+            String[] input = scanner.nextLine().split(splitPattern);
             for (String s : input) {
                 inputList.add(Integer.parseInt(s));
             }

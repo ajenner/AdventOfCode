@@ -4,6 +4,7 @@ import Day01.Day1;
 import Day02.Day2;
 import Day03.Day3;
 import Day03.Wire;
+import Day04.Day4;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,8 @@ public class Runner {
     public static void main(String[] args) {
         //runDay1();
         //runDay2();
-        runDay3();
+        //runDay3();
+        runDay4();
     }
 
     private static void runDay1() {
@@ -27,7 +29,7 @@ public class Runner {
     private static void runDay2() {
         System.out.println("Day2: ");
         Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d2.txt");
-        ArrayList<Integer> day2Inputs = reader.readAsOpcodes();
+        ArrayList<Integer> day2Inputs = reader.readAsIntegers(",");
         Day2 day2 = new Day2(day2Inputs);
         System.out.println("Question 1: " + day2.question1() + "\nQuestion 2: " + day2.question2(19690720));
     }
@@ -38,5 +40,14 @@ public class Runner {
         ArrayList<Wire> day3Inputs = reader.readEachWire();
         Day3 day3 = new Day3(day3Inputs);
         System.out.println("Question 1: " + day3.question1() + "\nQuestion 2: " + day3.question2());
+    }
+
+
+    private static void runDay4() {
+        System.out.println("Day4: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d4.txt");
+        ArrayList<Integer> day4Inputs = reader.readAsIntegers("-");
+        Day4 day4 = new Day4(day4Inputs);
+        System.out.println("Question 1: " + day4.question1() + "\nQuestion 2: " + day4.question2());
     }
 }
