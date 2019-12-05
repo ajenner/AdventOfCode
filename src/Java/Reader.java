@@ -55,4 +55,15 @@ public class Reader {
         }
         return inputList;
     }
+
+    public static int readInput() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter input: ");
+            return scanner.nextInt();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
 }
