@@ -43,6 +43,19 @@ public class Reader {
         return inputList;
     }
 
+    public ArrayList<String> readAsStrings() {
+        ArrayList<String> inputList = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(this.file);
+            while (scanner.hasNext()) {
+                inputList.add(scanner.nextLine());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return inputList;
+    }
+
     public ArrayList<Wire> readEachWire() {
         ArrayList<Wire> inputList = new ArrayList<>();
         try {

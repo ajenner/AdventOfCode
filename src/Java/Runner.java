@@ -6,6 +6,7 @@ import Day03.Day3;
 import Day03.Wire;
 import Day04.Day4;
 import Day05.Day5;
+import Day06.Day6;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,8 @@ public class Runner {
         //runDay2();
         //runDay3();
         //runDay4();
-        runDay5();
+        //runDay5();
+        runDay6();
     }
 
     private static void runDay1() {
@@ -58,5 +60,13 @@ public class Runner {
         ArrayList<Integer> day5Inputs = reader.readAsIntegers(",");
         Day5 day5 = new Day5(day5Inputs);
         day5.calculate();
+    }
+
+    private static void runDay6() {
+        System.out.println("Day6: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d6.txt");
+        ArrayList<String> day6Inputs = reader.readAsStrings();
+        Day6 day6 = new Day6(day6Inputs);
+        System.out.println("Question 1: " + day6.question1() + "\nQuestion 2: " + day6.question2());
     }
 }
