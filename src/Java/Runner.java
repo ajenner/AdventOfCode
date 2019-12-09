@@ -7,8 +7,12 @@ import Day03.Wire;
 import Day04.Day4;
 import Day05.Day5;
 import Day06.Day6;
+import Day07.Day7;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by ajenner on Day02/12/2019.
@@ -20,7 +24,8 @@ public class Runner {
         //runDay3();
         //runDay4();
         //runDay5();
-        runDay6();
+        //runDay6();
+        runDay7();
     }
 
     private static void runDay1() {
@@ -68,5 +73,23 @@ public class Runner {
         ArrayList<String> day6Inputs = reader.readAsStrings();
         Day6 day6 = new Day6(day6Inputs);
         System.out.println("Question 1: " + day6.question1() + "\nQuestion 2: " + day6.question2());
+    }
+
+    private static void runDay7() {
+        System.out.println("Day7: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d7.txt");
+        ArrayList<Integer> day7Inputs = reader.readAsIntegers(",");
+        Day7 day7 = new Day7(day7Inputs);
+        System.out.println("Question 1: " + day7.question1() +  "\nQuestion 2: " + day7.question2());
+    }
+
+
+
+    private static void runDay8() {
+        System.out.println("Day8: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d8.txt");
+        ArrayList<String> day8Inputs = reader.readAsStrings();
+        //Day8 day8 = new Day8(day8Inputs);
+        //System.out.println("Question 1: " + day8.question1() + "\nQuestion 2: " + day8.question2());
     }
 }
