@@ -8,6 +8,7 @@ import Day04.Day4;
 import Day05.Day5;
 import Day06.Day6;
 import Day07.Day7;
+import Day08.Day8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +26,8 @@ public class Runner {
         //runDay4();
         //runDay5();
         //runDay6();
-        runDay7();
+        //runDay7();
+        runDay8();
     }
 
     private static void runDay1() {
@@ -83,13 +85,11 @@ public class Runner {
         System.out.println("Question 1: " + day7.question1() +  "\nQuestion 2: " + day7.question2());
     }
 
-
-
     private static void runDay8() {
         System.out.println("Day8: ");
         Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d8.txt");
         ArrayList<String> day8Inputs = reader.readAsStrings();
-        //Day8 day8 = new Day8(day8Inputs);
-        //System.out.println("Question 1: " + day8.question1() + "\nQuestion 2: " + day8.question2());
+        Day8 day8 = new Day8(day8Inputs.get(0));
+        System.out.println("Question 1: " + day8.question1(25, 6) + "\nQuestion 2: " + day8.question2(25, 6));
     }
 }
