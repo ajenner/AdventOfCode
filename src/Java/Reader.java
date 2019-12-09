@@ -3,7 +3,9 @@ package Java;
 import Day03.Wire;
 
 import java.io.File;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -43,6 +45,20 @@ public class Reader {
         return inputList;
     }
 
+    public LinkedList<BigInteger> readAsLinkedBigIntegers(String splitPattern) {
+        LinkedList<BigInteger> inputList = new LinkedList<>();
+        try {
+            Scanner scanner = new Scanner(this.file);
+            String[] input = scanner.nextLine().split(splitPattern);
+            for (String s : input) {
+                inputList.add(new BigInteger(s));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return inputList;
+    }
+
     public ArrayList<String> readAsStrings() {
         ArrayList<String> inputList = new ArrayList<>();
         try {
@@ -69,7 +85,7 @@ public class Reader {
         return inputList;
     }
 
-    public static int readInput() {
+    public static Integer readInput() {
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter input: ");

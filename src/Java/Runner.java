@@ -8,12 +8,12 @@ import Day04.Day4;
 import Day05.Day5;
 import Day06.Day6;
 import Day07.Day7;
+import Day09.IntCodeComputer;
 import Day08.Day8;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by ajenner on Day02/12/2019.
@@ -27,7 +27,8 @@ public class Runner {
         //runDay5();
         //runDay6();
         //runDay7();
-        runDay8();
+        //runDay8();
+        runDay9();
     }
 
     private static void runDay1() {
@@ -91,5 +92,13 @@ public class Runner {
         ArrayList<String> day8Inputs = reader.readAsStrings();
         Day8 day8 = new Day8(day8Inputs.get(0));
         System.out.println("Question 1: " + day8.question1(25, 6) + "\nQuestion 2: " + day8.question2(25, 6));
+    }
+
+    private static void runDay9() {
+        System.out.println("Day9: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d9.txt");
+        LinkedList<BigInteger> day9Inputs = reader.readAsLinkedBigIntegers(",");
+        IntCodeComputer day9 = new IntCodeComputer(day9Inputs);
+        day9.calculate();
     }
 }
