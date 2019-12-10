@@ -10,6 +10,7 @@ import Day06.Day6;
 import Day07.Day7;
 import Day09.IntCodeComputer;
 import Day08.Day8;
+import Day10.Day10;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -20,15 +21,16 @@ import java.util.LinkedList;
  */
 public class Runner {
     public static void main(String[] args) {
-        //runDay1();
-        //runDay2();
-        //runDay3();
-        //runDay4();
-        //runDay5();
-        //runDay6();
-        //runDay7();
-        //runDay8();
-        runDay9();
+//        runDay1();
+//        runDay2();
+//        runDay3();
+//        runDay4();
+//        runDay5();
+//        runDay6();
+//        runDay7();
+//        runDay8();
+//        runDay9();
+          runDay10();
     }
 
     private static void runDay1() {
@@ -100,5 +102,14 @@ public class Runner {
         LinkedList<BigInteger> day9Inputs = reader.readAsLinkedBigIntegers(",");
         IntCodeComputer day9 = new IntCodeComputer(day9Inputs);
         day9.calculate();
+    }
+
+    private static void runDay10() {
+        System.out.println("Day10: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d10.txt");
+        ArrayList<String> day10Inputs = reader.readAsStrings();
+        Day10 day10 = new Day10(day10Inputs);
+        System.out.println("Question 1: " + day10.question1() + "\nQuestion 2: " + day10.question2());
+
     }
 }
