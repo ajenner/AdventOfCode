@@ -11,6 +11,7 @@ import Day07.Day7;
 import Day09.IntCodeComputer;
 import Day08.Day8;
 import Day10.Day10;
+import Day12.Day12;
 import Day11.Robot;
 
 import java.math.BigInteger;
@@ -32,7 +33,8 @@ public class Runner {
 //        runDay8();
 //        runDay9();
 //          runDay10();
-        runDay11();
+        //runDay11();
+        runDay12();
     }
 
     private static void runDay1() {
@@ -122,5 +124,15 @@ public class Runner {
         System.out.println("Question 1: " + day11.moveAndPaint(1));
         day11 = new Robot(day11Inputs);
         System.out.println("\nQuestion 2: " + day11.moveAndPaint(2));
+    }
+
+    private static void runDay12() {
+        System.out.println("Day12: ");
+        Reader reader = new Reader("C:\\AdventOfCode\\src\\Data\\d12.txt");
+        ArrayList<String> day12Inputs = reader.readAsStrings();
+        Day12 day12 = new Day12(day12Inputs);
+        System.out.println("Question 1: " + day12.question1());
+        day12 = new Day12(day12Inputs);
+        System.out.println("Question 2: " + day12.question2());
     }
 }
