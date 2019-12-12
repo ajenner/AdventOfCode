@@ -24,7 +24,7 @@ public class Day12 {
 
     public long question2() {
         space.stepUntilRepeat();
-        return LCM(space.uniqueX.size(), space.uniqueY.size(), space.uniqueZ.size());
+        return LCM(space.cycleX, space.cycleY, space.cycleZ);
     }
 
     private long LCM(long a, long b, long c) {
@@ -47,9 +47,12 @@ public class Day12 {
     class Space {
         ArrayList<Moon> moons;
         int time;
-        HashSet<String> uniqueX = new HashSet();
-        HashSet<String> uniqueY = new HashSet();
-        HashSet<String> uniqueZ = new HashSet();
+        String firstX;
+        String firstY;
+        String firstZ;
+        int cycleX = 0;
+        int cycleY = 0;
+        int cycleZ = 0;
 
         public Space(ArrayList<String> inputs) {
             time = 0;
@@ -69,6 +72,9 @@ public class Day12 {
                 int z = Integer.parseInt(m.group());
                 moons.add(new Moon(x, y, z));
             }
+            firstX = currentStateX();
+            firstY = currentStateY();
+            firstZ = currentStateZ();
         }
 
         public void stepUntilTime(int target) {
@@ -80,22 +86,19 @@ public class Day12 {
         }
 
         public void stepUntilRepeat() {
-            boolean addX = true;
-            boolean addY = true;
-            boolean addZ = true;
-            while(addX || addY || addZ) {
-                if(addX && !uniqueX.add(currentStateX())) {
-                    addX = false;
-                }
-                if(addY && !uniqueY.add(currentStateY())) {
-                    addY = false;
-                }
-                if(addZ && !uniqueZ.add(currentStateZ())) {
-                    addZ = false;
-                }
+            while(cycleX == 0 || cycleY == 0 || cycleZ == 0) {
                 moons.forEach(moon1 -> moons.forEach(moon2 -> moon1.calculateVelocities(moon2)));
                 moons.forEach(moon -> moon.move());
                 time ++;
+                if(cycleX == 0 && firstX.equals(currentStateX())) {
+                    cycleX = time;
+                }
+                if(cycleY == 0 && firstY.equals(currentStateY())) {
+                    cycleY = time;
+                }
+                if(cycleZ == 0 && firstZ.equals(currentStateZ())) {
+                    cycleZ = time;
+                }
             }
         }
 
